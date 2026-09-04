@@ -1,58 +1,126 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Study Notes</title>
+    <title>My Study Notes 🌷</title>
 
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            background: #f8f1f4;
+            background: #fdf1f5;
+            color: #5b4650;
             text-align: center;
-            padding: 50px;
+        }
+
+        header {
+            padding: 60px 20px 40px;
         }
 
         h1 {
-            color: #6b4c5a;
-            font-size: 40px;
+            font-size: 42px;
+            margin-bottom: 10px;
+            color: #7b5263;
         }
 
-        p {
-            color: #765f68;
+        header p {
             font-size: 18px;
+            color: #92717f;
         }
 
         .subjects {
-            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
         }
 
-        button {
+        .card {
             background: white;
-            border: none;
-            padding: 15px 25px;
-            margin: 10px;
-            border-radius: 15px;
-            font-size: 16px;
+            width: 180px;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(150, 100, 120, 0.15);
             cursor: pointer;
-            box-shadow: 0 4px 10px #ddd;
+            transition: 0.3s;
         }
 
-        button:hover {
-            transform: translateY(-3px);
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card h2 {
+            margin: 10px 0;
+        }
+
+        .card p {
+            color: #92717f;
+        }
+
+        #notes {
+            display: none;
+            background: white;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(150, 100, 120, 0.15);
+        }
+
+        #notes h2 {
+            color: #7b5263;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            color: #92717f;
         }
     </style>
 </head>
 
 <body>
 
-    <h1>My Study Notes 📚</h1>
+    <header>
+        <h1>My Study Notes 📚</h1>
+        <p>A little corner for learning, notes & dreams 🌷</p>
+    </header>
 
-    <p>Welcome to my little study corner 🌷</p>
+    <h2>Choose a Subject</h2>
 
     <div class="subjects">
-        <button>🌿 Biology</button>
-        <button>⚗️ Chemistry</button>
-        <button>⚡ Physics</button>
+
+        <div class="card" onclick="showNotes('biology')">
+            <div style="font-size: 45px;">🌿</div>
+            <h2>Biology</h2>
+            <p>Explore life & nature</p>
+        </div>
+
+        <div class="card" onclick="showNotes('chemistry')">
+            <div style="font-size: 45px;">⚗️</div>
+            <h2>Chemistry</h2>
+            <p>Explore atoms & reactions</p>
+        </div>
+
+        <div class="card" onclick="showNotes('physics')">
+            <div style="font-size: 45px;">⚡</div>
+            <h2>Physics</h2>
+            <p>Explore the universe</p>
+        </div>
+
     </div>
 
-</body>
-</html>
+    <div id="notes">
+        <h2 id="noteTitle"></h2>
+        <p id="noteText"></p>
+    </div>
+
+    <footer>
+        Made with ♡ for studying
+    </footer>
+
+
+    <script>
+        function showNotes(subject) {
+
+            let title = document.getElement
