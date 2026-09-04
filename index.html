@@ -18,7 +18,6 @@
 
         h1 {
             font-size: 42px;
-            margin-bottom: 10px;
             color: #7b5263;
         }
 
@@ -49,14 +48,6 @@
             transform: translateY(-8px);
         }
 
-        .card h2 {
-            margin: 10px 0;
-        }
-
-        .card p {
-            color: #92717f;
-        }
-
         #notes {
             display: none;
             background: white;
@@ -64,7 +55,6 @@
             margin: 30px auto;
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(150, 100, 120, 0.15);
         }
 
         #notes h2 {
@@ -119,8 +109,34 @@
         Made with ♡ for studying
     </footer>
 
-
     <script>
         function showNotes(subject) {
 
-            let title = document.getElement
+            let title = document.getElementById("noteTitle");
+            let text = document.getElementById("noteText");
+            let notes = document.getElementById("notes");
+
+            notes.style.display = "block";
+
+            if (subject === "biology") {
+                title.innerHTML = "🌿 Biology";
+                text.innerHTML =
+                    "Your Biology notes will appear here!";
+            }
+
+            if (subject === "chemistry") {
+                title.innerHTML = "⚗️ Chemistry";
+                text.innerHTML =
+                    "Your Chemistry notes will appear here!";
+            }
+
+            if (subject === "physics") {
+                title.innerHTML = "⚡ Physics";
+                text.innerHTML =
+                    "Your Physics notes will appear here!";
+            }
+        }
+    </script>
+
+</body>
+</html>
